@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fyo-Wj-Jcj">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="EndlessNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gc-et-Nep">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J09-Ed-qCC">
+                                        <rect key="frame" x="180" y="149" width="240" height="238"/>
+                                        <subviews>
+                                            <view autoresizesSubviews="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="90" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-Ov-uxr">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="90"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pen-xL-RY2">
+                                                        <rect key="frame" x="34" y="4" width="172" height="82"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHZ-Fr-xWG" userLabel="Current Han Label">
+                                                        <rect key="frame" x="34" y="4" width="172" height="82"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="pen-xL-RY2" firstAttribute="centerX" secondItem="Jfw-Ov-uxr" secondAttribute="centerX" id="4QS-Tf-afd"/>
+                                                    <constraint firstItem="pen-xL-RY2" firstAttribute="centerY" secondItem="Jfw-Ov-uxr" secondAttribute="centerY" id="N2M-ou-c0L"/>
+                                                    <constraint firstItem="jHZ-Fr-xWG" firstAttribute="centerX" secondItem="Jfw-Ov-uxr" secondAttribute="centerX" id="eLn-l5-BAV"/>
+                                                    <constraint firstItem="jHZ-Fr-xWG" firstAttribute="centerY" secondItem="Jfw-Ov-uxr" secondAttribute="centerY" id="zLx-Z4-HBG"/>
+                                                </constraints>
+                                            </view>
+                                            <button autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSI-NI-4ri">
+                                                <rect key="frame" x="43" y="110" width="154" height="128"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="contentEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="rightarrow"/>
+                                                <connections>
+                                                    <action selector="nextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFe-72-bVz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="J09-Ed-qCC" firstAttribute="centerX" secondItem="5Gc-et-Nep" secondAttribute="centerX" id="BTr-ep-4sx"/>
+                                    <constraint firstItem="J09-Ed-qCC" firstAttribute="centerY" secondItem="5Gc-et-Nep" secondAttribute="centerY" id="yMe-tC-Sru"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5Gc-et-Nep" secondAttribute="trailing" id="93M-9Y-eqj"/>
+                            <constraint firstItem="5Gc-et-Nep" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KzA-AX-nwb"/>
+                            <constraint firstItem="5Gc-et-Nep" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PUJ-0L-n9R"/>
+                            <constraint firstItem="5Gc-et-Nep" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ZUw-gU-kD4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="abZ-iz-3uA">
+                        <barButtonItem key="rightBarButtonItem" title="처음으로" id="vzs-zc-bse">
+                            <connections>
+                                <action selector="goHome:" destination="BYZ-38-t0r" id="a9n-LY-yhr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentHanLabel" destination="jHZ-Fr-xWG" id="W9g-2Z-W3b"/>
+                        <outlet property="currentNumLabel" destination="pen-xL-RY2" id="Owq-EO-IUE"/>
+                        <outlet property="homeBarButtonItem" destination="vzs-zc-bse" id="Djf-QN-h10"/>
+                        <outlet property="nextButton" destination="QSI-NI-4ri" id="w5J-u9-fhM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1114" y="323"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X7g-wM-etz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fyo-Wj-Jcj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Scd-dy-laG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sa0-Gm-pJ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IvV-m0-Suq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rightarrow" width="128" height="128"/>
+    </resources>
+</document>
