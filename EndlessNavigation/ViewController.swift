@@ -105,11 +105,16 @@ class ViewController: UIViewController {
 
         let landscape:Bool = (deviceOrientation == .LandscapeLeft || deviceOrientation == .LandscapeRight) ? true : false
 
-        UIView.animateWithDuration(0.3, animations: {
+//        UIView.animateWithDuration(0.3, animations: {
+//            self.currentNumLabel.alpha = landscape ? 0.0 : 1.0
+//            self.currentHanLabel.alpha = landscape ? 1.0 : 0.0
+//        })
+
+        // iOS 9 style
+        UIView.animateWithDuration(0.3) { () -> Void in
             self.currentNumLabel.alpha = landscape ? 0.0 : 1.0
             self.currentHanLabel.alpha = landscape ? 1.0 : 0.0
-        })
-
+        }
     }
 
     @IBAction func nextPressed(sender: UIButton) {
