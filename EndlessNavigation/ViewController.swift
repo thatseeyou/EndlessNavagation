@@ -40,6 +40,8 @@ func intToHangul(num: Int) -> String {
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var topStackView: UIStackView!
+
     @IBOutlet weak var currentNumLabel: UILabel!
     @IBOutlet weak var currentHanLabel: UILabel!
 
@@ -54,6 +56,25 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
         currentDepth = self.navigationController!.viewControllers.count
+
+        // subview의 가운데 정렬을 위해서 사용
+        // dummy view를 추가하지 않기 위해서 layout guide를 코드에 추가한다. (iOS 9)
+        // 아직 IB에서 layout guide를 추가할 수 없다.
+        let container = UILayoutGuide()
+        view.addLayoutGuide(container)
+
+        // Set interior constraints
+        container.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
+        container.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
+        container.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor).active = true
+        container.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.topAnchor).active = true
+
+        // Set exterior constraints
+        // WARNING : IB에서 constraint를 추가하지 않으면 자동으로 추가를 해서 아래와 충돌할 수 있으므로 일단 추가를 하고
+        //           Remove at buiuld time 옵션을 선택한다.
+        topStackView.centerXAnchor.constraintEqualToAnchor(container.centerXAnchor).active = true
+        topStackView.centerYAnchor.constraintEqualToAnchor(container.centerYAnchor).active = true
+
 
         //
         // template image를 사용하기 위해서 IB 대신 여기에서 이미지를 만든다.
