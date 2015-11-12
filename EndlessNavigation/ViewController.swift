@@ -67,12 +67,6 @@ class ViewController: UIViewController {
 //            homeBarButtonItem.enabled = false
         }
 
-        // UIView의 intrinsicContentSize를 지정한다.
-        // IB에서는 design time에만 영향을 준다.
-        let containerView = currentNumLabel.superview!
-        containerView.widthAnchor.constraintEqualToConstant(240).active = true
-        containerView.heightAnchor.constraintEqualToConstant(90).active = true
-
         self.navigationItem.title = "\(currentDepth)"
         currentNumLabel.text = "\(currentDepth)"
         currentHanLabel.text = intToHangul(currentDepth)
