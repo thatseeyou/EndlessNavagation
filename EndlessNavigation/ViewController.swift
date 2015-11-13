@@ -132,14 +132,6 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func nextPressed(sender: UIButton) {
-
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-
-
-        self.navigationController!.pushViewController(viewController, animated: true)
-    }
-
     @IBAction func goHome(sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }

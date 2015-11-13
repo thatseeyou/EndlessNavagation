@@ -12,7 +12,6 @@
 		AA9807661BE76B4600CEE0DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9807641BE76B4600CEE0DF /* Main.storyboard */; };
 		AA9807681BE76B4600CEE0DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9807671BE76B4600CEE0DF /* Assets.xcassets */; };
 		AA98076B1BE76B4600CEE0DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9807691BE76B4600CEE0DF /* LaunchScreen.storyboard */; };
-		AADC85B11BF43E630081555B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AADC85B01BF43E630081555B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AADC85B11BF43E630081555B /* README.md in Sources */,
 				AA9807631BE76B4600CEE0DF /* ViewController.swift in Sources */,
 				AA9807611BE76B4600CEE0DF /* AppDelegate.swift in Sources */,
 			);
@@ -253,6 +251,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = EndlessNavigation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thatseeyou.EndlessNavigation;
@@ -264,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = EndlessNavigation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thatseeyou.EndlessNavigation;
