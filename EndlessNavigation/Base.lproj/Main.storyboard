@@ -65,10 +65,14 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="J09-Ed-qCC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" placeholder="YES" id="6MM-kL-NBt"/>
                             <constraint firstItem="J09-Ed-qCC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" placeholder="YES" id="cUH-ZT-ufk"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3B7-CP-wRy" appends="YES" id="8dh-sx-h7h"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="abZ-iz-3uA">
                         <barButtonItem key="rightBarButtonItem" title="처음으로" id="vzs-zc-bse">
@@ -86,6 +90,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="3B7-CP-wRy">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="A8l-pg-3pB"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1114" y="323"/>
         </scene>
