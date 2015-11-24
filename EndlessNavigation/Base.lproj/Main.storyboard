@@ -53,10 +53,12 @@
                                         <rect key="frame" x="43" y="110" width="154" height="128"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <inset key="contentEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="rightarrow"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="QPl-h7-F91"/>
+                                            <outletCollection property="gestureRecognizers" destination="ld1-hx-JFr" appends="YES" id="FGH-Pa-OM6"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="nextByButton" id="QPl-h7-F91"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -87,16 +89,63 @@
                         <outlet property="homeBarButtonItem" destination="vzs-zc-bse" id="Djf-QN-h10"/>
                         <outlet property="nextButton" destination="QSI-NI-4ri" id="w5J-u9-fhM"/>
                         <outlet property="topStackView" destination="J09-Ed-qCC" id="pVM-pa-Uij"/>
+                        <segue destination="8zZ-NC-Ck6" kind="presentation" identifier="showHistory" id="vK7-bw-6rF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="3B7-CP-wRy">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="A8l-pg-3pB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="nextBySwipe" id="A8l-pg-3pB"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ld1-hx-JFr">
+                    <connections>
+                        <action selector="longPressed:" destination="BYZ-38-t0r" id="QWe-xF-bDp"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1114" y="323"/>
+        </scene>
+        <!--Direct Jump To-->
+        <scene sceneID="o5G-i4-vza">
+            <objects>
+                <tableViewController id="ycy-tG-U2d" customClass="JumpBackTableViewController" customModule="EndlessNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0t4-2d-UN8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="7ty-hQ-cHm" style="IBUITableViewCellStyleDefault" id="Evw-dF-VNl">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Evw-dF-VNl" id="xZi-S7-99i">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="100" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7ty-hQ-cHm">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ycy-tG-U2d" id="Z0H-P9-uIr"/>
+                            <outlet property="delegate" destination="ycy-tG-U2d" id="BVF-4N-x6b"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Direct Jump To" id="Wfm-cA-s6w"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o91-4C-vze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2714" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X7g-wM-etz">
@@ -116,6 +165,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvV-m0-Suq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="170" y="323"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8J8-0X-87M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8zZ-NC-Ck6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1TI-eJ-dZH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ycy-tG-U2d" kind="relationship" relationship="rootViewController" id="Rmm-UQ-aGu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Sp-e6-qdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="328"/>
         </scene>
     </scenes>
     <resources>

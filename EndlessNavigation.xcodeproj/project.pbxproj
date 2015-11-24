@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5442E51BF62DA60048B0B4 /* JumpBackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5442E41BF62DA60048B0B4 /* JumpBackTableViewController.swift */; };
 		AA9807611BE76B4600CEE0DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9807601BE76B4600CEE0DF /* AppDelegate.swift */; };
 		AA9807631BE76B4600CEE0DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9807621BE76B4600CEE0DF /* ViewController.swift */; };
 		AA9807661BE76B4600CEE0DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9807641BE76B4600CEE0DF /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA5442E41BF62DA60048B0B4 /* JumpBackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpBackTableViewController.swift; sourceTree = "<group>"; };
 		AA98075D1BE76B4600CEE0DF /* EndlessNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EndlessNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9807601BE76B4600CEE0DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9807621BE76B4600CEE0DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				AA9807601BE76B4600CEE0DF /* AppDelegate.swift */,
 				AA9807621BE76B4600CEE0DF /* ViewController.swift */,
+				AA5442E41BF62DA60048B0B4 /* JumpBackTableViewController.swift */,
 				AA9807641BE76B4600CEE0DF /* Main.storyboard */,
 				AA9807671BE76B4600CEE0DF /* Assets.xcassets */,
 				AA9807691BE76B4600CEE0DF /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA9807631BE76B4600CEE0DF /* ViewController.swift in Sources */,
+				AA5442E51BF62DA60048B0B4 /* JumpBackTableViewController.swift in Sources */,
 				AA9807611BE76B4600CEE0DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

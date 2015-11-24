@@ -111,7 +111,23 @@ class ViewController: UIViewController {
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //segue.destinationViewController
+        if (segue.identifier == "showHistory") {
+            let presentedViewController = segue.destinationViewController as! UINavigationController
+
+            // viewDidLoad 전 단계이기는 하지만 이미 contentViewController는 생성된 상태로 보임
+            let contentViewController = presentedViewController.viewControllers[0] as! JumpBackTableViewController
+            contentViewController.navDepth = currentDepth
+        }
+    }
+
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+
+        // old orientation : statusBarOrientation을 통해서 얻을 수 있다.
+        // new orientation : 다음과 같이 targetTransform을 통해서 계산할 수 있다.
+        // coordinator.targetTransform()
+
         changeView()
     }
 
@@ -134,6 +150,15 @@ class ViewController: UIViewController {
 
     @IBAction func goHome(sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+
+    // MARK: gesture recognizer delegate    
+    @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
+
+        if sender.state == .Began {
+            performSegueWithIdentifier("showHistory", sender: self)
+        }
+
     }
 }
 

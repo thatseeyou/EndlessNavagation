@@ -14,3 +14,9 @@ Practice for navigation controller
 3. Ctrl+drag and drop Swipe Gesture Recognizer in scene dock to view controller and select 'show seque'.
 4. Build, run and test.
 
+## Presents table view by long press gesture
+1. Add long press guesture recognizer to button in IB
+2. Add action to long press gesture recognizer
+3. Transfer data to destination view controller by prepareForSeque()
+
+
