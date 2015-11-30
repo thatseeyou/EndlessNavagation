@@ -8,6 +8,9 @@
 
 import UIKit
 
+let JumpBackTableControllerDidSelectItemNotification = "JumpBackTableControllerDidSelectItemNotification"
+let JumpBackTableControllerSelectedItemUserInfoKey = "SelectedItem"
+
 class JumpBackTableViewController: UITableViewController {
 
     var navDepth = 0
@@ -54,14 +57,10 @@ class JumpBackTableViewController: UITableViewController {
         // NOTICE:
         // NavigationViewController의 content view controller(ViewController)에서 present 했지만
         // presentingViewController는 navigation controller가 되고 있다. 
-        let topNavigationController = self.presentingViewController as? UINavigationController
-
-        //let topNavigationController = viewController.navigationController
+        //let topNavigationController = self.presentingViewController as? UINavigationController
 
         presentingViewController?.dismissViewControllerAnimated(true) { () -> Void in
-            assert(topNavigationController!.viewControllers.count > indexPath.row)
-
-            topNavigationController!.popToViewController(topNavigationController!.viewControllers[indexPath.row], animated: true)
+            NSNotificationCenter.defaultCenter().postNotificationName(JumpBackTableControllerDidSelectItemNotification, object: self, userInfo: [JumpBackTableControllerSelectedItemUserInfoKey: indexPath.row])
         }
     }
 

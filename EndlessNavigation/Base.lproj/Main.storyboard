@@ -147,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="2714" y="328"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Top Navigation Controller-->
         <scene sceneID="X7g-wM-etz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fyo-Wj-Jcj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fyo-Wj-Jcj" customClass="TopNavigationController" customModule="EndlessNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Scd-dy-laG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

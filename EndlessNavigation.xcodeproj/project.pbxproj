@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA5442E51BF62DA60048B0B4 /* JumpBackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5442E41BF62DA60048B0B4 /* JumpBackTableViewController.swift */; };
+		AA655F751C0C61D2005EA480 /* TopNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA655F741C0C61D2005EA480 /* TopNavigationController.swift */; };
 		AA9807611BE76B4600CEE0DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9807601BE76B4600CEE0DF /* AppDelegate.swift */; };
 		AA9807631BE76B4600CEE0DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9807621BE76B4600CEE0DF /* ViewController.swift */; };
 		AA9807661BE76B4600CEE0DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9807641BE76B4600CEE0DF /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		AA5442E41BF62DA60048B0B4 /* JumpBackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpBackTableViewController.swift; sourceTree = "<group>"; };
+		AA655F741C0C61D2005EA480 /* TopNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNavigationController.swift; sourceTree = "<group>"; };
 		AA98075D1BE76B4600CEE0DF /* EndlessNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EndlessNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9807601BE76B4600CEE0DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA9807621BE76B4600CEE0DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				AA9807601BE76B4600CEE0DF /* AppDelegate.swift */,
+				AA655F741C0C61D2005EA480 /* TopNavigationController.swift */,
 				AA9807621BE76B4600CEE0DF /* ViewController.swift */,
 				AA5442E41BF62DA60048B0B4 /* JumpBackTableViewController.swift */,
 				AA9807641BE76B4600CEE0DF /* Main.storyboard */,
@@ -143,6 +146,7 @@
 				AA9807631BE76B4600CEE0DF /* ViewController.swift in Sources */,
 				AA5442E51BF62DA60048B0B4 /* JumpBackTableViewController.swift in Sources */,
 				AA9807611BE76B4600CEE0DF /* AppDelegate.swift in Sources */,
+				AA655F751C0C61D2005EA480 /* TopNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@ Practice for navigation controller
 - animateWithDuration
 - Use UILayoutGuide to center subview
 - Add right bar button item with storyboard
+- Use notification center for loose coupling
+- Use extension to add log-related method
 
 ## Add Swipe gesture recognizer to 'show' seque without editing code
 1. Drag and drop Swipe Gesture Recognizer in Object Libaray pane to view in storyboard. Swipe Gesture Recognizer should be added to scene dock.

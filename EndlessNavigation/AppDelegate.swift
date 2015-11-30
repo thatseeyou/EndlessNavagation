@@ -8,6 +8,15 @@
 
 import UIKit
 
+extension NSObject {
+    func log_trace(funcname:String = __FUNCTION__) {
+        print("\(self.dynamicType)::\(funcname) called")
+    }
+    func log_debug(msg:String, funcname:String = __FUNCTION__) {
+        print("\(self.dynamicType)::\(funcname) \(msg)")
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
         return true
     }
 
