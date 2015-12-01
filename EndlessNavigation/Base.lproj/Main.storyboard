@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J09-Ed-qCC">
-                                <rect key="frame" x="180" y="181" width="240" height="238"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J09-Ed-qCC">
+                                <rect key="frame" x="180" y="181" width="240" height="243"/>
                                 <subviews>
                                     <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-Ov-uxr">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="90"/>
@@ -49,8 +49,8 @@
                                             <constraint firstItem="jHZ-Fr-xWG" firstAttribute="centerY" secondItem="Jfw-Ov-uxr" secondAttribute="centerY" id="zLx-Z4-HBG"/>
                                         </constraints>
                                     </view>
-                                    <button autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSI-NI-4ri">
-                                        <rect key="frame" x="43" y="110" width="154" height="128"/>
+                                    <button autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSI-NI-4ri">
+                                        <rect key="frame" x="39" y="110" width="163" height="133"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>

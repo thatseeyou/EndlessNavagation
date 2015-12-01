@@ -10,11 +10,18 @@ import UIKit
 
 class TopNavigationController: UINavigationController {
 
+    var observer : NSObjectProtocol?;
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         addObservers()
+    }
+
+    deinit {
+        // meaningless on current context
+        removeObservers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,13 +48,19 @@ class TopNavigationController: UINavigationController {
 
     func addObservers() {
         // object : limit sender
-        NSNotificationCenter.defaultCenter().addObserverForName(JumpBackTableControllerDidSelectItemNotification, object: nil, queue: nil) { (notification:NSNotification) -> Void  in
+        observer = NSNotificationCenter.defaultCenter().addObserverForName(JumpBackTableControllerDidSelectItemNotification, object: nil, queue: nil) { (notification:NSNotification) -> Void  in
             self.log_debug("received " + notification.name)
 
             if let depth:Int = notification.userInfo?[JumpBackTableControllerSelectedItemUserInfoKey] as? Int {
                 assert(self.viewControllers.count > depth)
                 self.popToViewController(self.viewControllers[depth], animated: true)
             }
+        }
+    }
+
+    func removeObservers() {
+        if let observer = observer {
+            NSNotificationCenter.defaultCenter().removeObserver(observer);
         }
     }
 
