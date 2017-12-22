@@ -30,26 +30,26 @@ class TopNavigationController: UINavigationController {
     }
 
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         log_trace()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         log_trace()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         log_trace()
     }
 
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         log_trace()
     }
 
     func addObservers() {
         // object : limit sender
-        observer = NSNotificationCenter.defaultCenter().addObserverForName(JumpBackTableControllerDidSelectItemNotification, object: nil, queue: nil) { (notification:NSNotification) -> Void  in
-            self.log_debug("received " + notification.name)
+        observer = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: JumpBackTableControllerDidSelectItemNotification), object: nil, queue: nil) { (notification:Notification) -> Void  in
+            self.log_debug(msg: "received " + notification.name.rawValue)
 
             if let depth:Int = notification.userInfo?[JumpBackTableControllerSelectedItemUserInfoKey] as? Int {
                 assert(self.viewControllers.count > depth)
@@ -60,7 +60,7 @@ class TopNavigationController: UINavigationController {
 
     func removeObservers() {
         if let observer = observer {
-            NSNotificationCenter.defaultCenter().removeObserver(observer);
+            NotificationCenter.default.removeObserver(observer);
         }
     }
 

@@ -15,12 +15,11 @@ func intToHangul(num: Int) -> String {
     let x10000 : [String] = ["", "만", "억", "조", "경"]
 
     var currentPos = 0
-    var remainNum = num
-    var han : String = ""
+    var remainNum = num, digit = 0
+    var han = ""
 
     while (true) {
-        let digit = remainNum % 10
-        remainNum = remainNum / 10
+        (remainNum, digit) = remainNum.quotientAndRemainder(dividingBy: 10)
 
         if ((currentPos % 4) == 0) {
             han = x1[digit] + x10000[currentPos / 4] + han
@@ -53,7 +52,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         currentDepth = self.navigationController!.viewControllers.count
 
@@ -64,16 +62,16 @@ class ViewController: UIViewController {
         view.addLayoutGuide(container)
 
         // Set interior constraints
-        container.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
-        container.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor).active = true
-        container.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor).active = true
-        container.bottomAnchor.constraintEqualToAnchor(bottomLayoutGuide.topAnchor).active = true
+        container.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        container.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        container.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        container.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
 
         // Set exterior constraints
         // WARNING : IB에서 constraint를 추가하지 않으면 자동으로 추가를 해서 아래와 충돌할 수 있으므로 일단 추가를 하고
         //           Remove at buiuld time 옵션을 선택한다.
-        topStackView.centerXAnchor.constraintEqualToAnchor(container.centerXAnchor).active = true
-        topStackView.centerYAnchor.constraintEqualToAnchor(container.centerYAnchor).active = true
+        topStackView.centerXAnchor.constraint(equalTo: container.centerXAnchor).isActive = true
+        topStackView.centerYAnchor.constraint(equalTo: container.centerYAnchor).isActive = true
 
 
         //
@@ -88,9 +86,9 @@ class ViewController: UIViewController {
 //            homeBarButtonItem.enabled = false
         }
 
-        self.navigationItem.title = "\(currentDepth)"
-        currentNumLabel.text = "\(currentDepth)"
-        currentHanLabel.text = intToHangul(currentDepth)
+        self.navigationItem.title = "\(currentDepth!)"
+        currentNumLabel.text = "\(currentDepth!)"
+        currentHanLabel.text = intToHangul(num: currentDepth)
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,10 +96,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillAppear(animated: Bool) {
-        let deviceOrientation : UIDeviceOrientation = UIDevice.currentDevice().orientation
+    override func viewWillAppear(_ animated: Bool) {
+        let deviceOrientation : UIDeviceOrientation = UIDevice.current.orientation
 
-        if (deviceOrientation == .LandscapeLeft || deviceOrientation == .LandscapeRight) {
+        if (deviceOrientation == .landscapeLeft || deviceOrientation == .landscapeRight) {
             currentNumLabel.alpha = 0.0
             currentHanLabel.alpha = 1.0
         }
@@ -111,10 +109,10 @@ class ViewController: UIViewController {
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //segue.destinationViewController
         if (segue.identifier == "showHistory") {
-            let presentedViewController = segue.destinationViewController as! UINavigationController
+            let presentedViewController = segue.destination as! UINavigationController
 
             // viewDidLoad 전 단계이기는 하지만 이미 contentViewController는 생성된 상태로 보임
             let contentViewController = presentedViewController.viewControllers[0] as! JumpBackTableViewController
@@ -122,8 +120,7 @@ class ViewController: UIViewController {
         }
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         // old orientation : statusBarOrientation을 통해서 얻을 수 있다.
         // new orientation : 다음과 같이 targetTransform을 통해서 계산할 수 있다.
         // coordinator.targetTransform()
@@ -132,33 +129,27 @@ class ViewController: UIViewController {
     }
 
     func changeView() {
-        let deviceOrientation : UIDeviceOrientation = UIDevice.currentDevice().orientation
+        let deviceOrientation : UIDeviceOrientation = UIDevice.current.orientation
 
-        let landscape:Bool = (deviceOrientation == .LandscapeLeft || deviceOrientation == .LandscapeRight) ? true : false
-
-//        UIView.animateWithDuration(0.3, animations: {
-//            self.currentNumLabel.alpha = landscape ? 0.0 : 1.0
-//            self.currentHanLabel.alpha = landscape ? 1.0 : 0.0
-//        })
+        let landscape:Bool = (deviceOrientation == .landscapeLeft || deviceOrientation == .landscapeRight) ? true : false
 
         // iOS 9 style
-        UIView.animateWithDuration(0.3) { () -> Void in
+        UIView.animate(withDuration: 0.3) { () -> Void in
             self.currentNumLabel.alpha = landscape ? 0.0 : 1.0
             self.currentHanLabel.alpha = landscape ? 1.0 : 0.0
         }
     }
 
     @IBAction func goHome(sender: UIBarButtonItem) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     // MARK: gesture recognizer delegate    
     @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
 
-        if sender.state == .Began {
-            performSegueWithIdentifier("showHistory", sender: self)
+        if sender.state == .began {
+            performSegue(withIdentifier: "showHistory", sender: self)
         }
-
     }
 }
 
